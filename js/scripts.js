@@ -71,7 +71,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     var pizzaSize = parseInt($("input:radio[name=pizzaSize]:checked").val());
-    var pizzaProtein = []; parseInt($("input:radio[name=protein]:checked").val());
+    var pizzaProtein = []; 
     var pizzaToppings = [];
 
     $("input:checkbox[name=protein]:checked").map(function(){
