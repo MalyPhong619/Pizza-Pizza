@@ -22,13 +22,17 @@ function Pizza(size, protein, topping) {
   this.toppingPrice = 0
 }
 
-Pizza.prototype.toppings = function() {
+// each topping is $1 = topping.length
+Pizza.prototype.toppingsPrice = function() {
   return this.toppingPrice += this.topping.length;
 }
 
 Pizza.prototype.Cost = function() {
   this.startPrice += Add(this.size, this.protein, this.toppingPrice);
   $(".totalCost").text("Your total cost: " + "$" + this.startPrice);
+  this.topping.forEach(function(topping) {
+    $("ul").append("<li>" + topping + "</li>");
+  })
 }
 
 
@@ -59,10 +63,10 @@ $(document).ready(function() {
     $("input:checkbox[name=toppings]:checked").map(function(){
       pizzaToppings.push($(this).val());
     })
-      console.log(pizzaToppings);
+
     var pizza = new Pizza(pizzaSize, pizzaProtein, pizzaToppings);
 
-    pizza.toppings();
+    pizza.toppingsPrice();
     pizza.Cost();
     $(".pizzaOrderForm").hide();
     $(".completedOrder").show();
