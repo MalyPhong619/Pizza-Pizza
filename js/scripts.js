@@ -6,6 +6,8 @@ $(document).ready(function() {
     console.log(pizzaSize);
     var pizzaProtein = parseInt($("input:radio[name=protein]:checked").val());
     console.log(pizzaProtein);
+    var pizzaToppings = parseInt($("input:checkbox[name=toppings]:checked").val());
+    console.log(pizzaToppings);
 
   });
 
