@@ -11,8 +11,7 @@ function Information(name, street, city, state) {
 
 Information.prototype.delivery = function() {
   $("#completedName").text(this.name);
-  $("#completedAddress").text(this.street + this.city + ", " + this.state);
-
+  $("#completedAddress").append(this.street + "<br>" + this.city + ", " + this.state);
 }
 
 function Pizza(size, protein, topping) {
@@ -28,9 +27,6 @@ Pizza.prototype.Cost = function() {
 }
 
 
-
-
-
 // User Interface Logic
 $(document).ready(function() {
   $(".orderForm").submit(function(event) {
@@ -44,21 +40,20 @@ $(document).ready(function() {
     var information = new Information(userName, userStreet, userCity, userState);
 
     information.delivery();
-
+    $(".pizzaOrderForm").show();
+    $(".userInformation").hide();
   });
   $(".pizzaOrderForm").submit(function(event) {
     event.preventDefault();
 
     var pizzaSize = parseInt($("input:radio[name=pizzaSize]:checked").val());
     var pizzaProtein = parseInt($("input:radio[name=protein]:checked").val());
-    var pizzaToppings = parseInt($("input:checkbox[name=toppings]:checked").val());
+    var pizzaToppings = parseInt($("input:radio[name=toppings]:checked").val());
 
     var pizza = new Pizza(pizzaSize, pizzaProtein, pizzaToppings);
 
-    console.log(pizza);
-
     pizza.Cost();
-
-
+    $(".pizzaOrderForm").hide();
+    $(".completedOrder").show();
   });
 });

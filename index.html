@@ -11,17 +11,22 @@
   </head>
   <body>
     <h1>Pizza My Heart <span id="pizzaShop">pizza shop</span></h1>
-    <div>
-      <form class="orderForm">
-        <h3>Name:</h3>
-        <input class="ordererInput" type="text" id="formName">
-        <h3>Address:</h3>
-        <input class="ordererInput" type="text" id="formStreet" placeholder="Street Address">
-        <br>
-        <input class="ordererInput" type="text" id="formCity" placeholder="City">
-        <input class="ordererInput" type="text" id="formState" placeholder="State"><br>
-        <button type="submit" class="btn">Continue</button>
-      </form>
+    <div class="row userInformation">
+      <div class=col-md-6>
+        <form class="orderForm">
+          <h3>Name:</h3>
+          <input class="ordererInput" type="text" id="formName" placeholder="Name">
+          <h3>Address:</h3>
+          <input class="ordererInput" type="text" id="formStreet" placeholder="Street Address">
+          <br>
+          <input class="ordererInput" type="text" id="formCity" placeholder="City">
+          <input class="ordererInput" type="text" id="formState" placeholder="State"><br>
+          <button type="submit" class="btn">Continue</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <img src="img/pizzaheart.png" alt="Pizza Heart">
+      </div>
     </div>
     <form class="pizzaOrderForm">
       <div class="row">
@@ -40,22 +45,30 @@
           <input type="radio" name="protein" value="1">Ham
         </div>
         <div class="col-md-4 pizzaToppings">
-          <h3>Select Toppings:</h3>
-          <input type="checkbox" name="toppings" value="1">Pineapple<br>
-          <input type="checkbox" name="toppings" value="1">Spinach<br>
-          <input type="checkbox" name="toppings" value="1">Olives<br>
-          <input type="checkbox" name="toppings" value="1">Mushrooms<br>
-          <input type="checkbox" name="toppings" value="1">Onions
+          <h3>Select A Topping:</h3>
+          <input type="radio" name="toppings" value="2">Pineapple<br>
+          <input type="radio" name="toppings" value="1">Spinach<br>
+          <input type="radio" name="toppings" value="1">Olives<br>
+          <input type="radio" name="toppings" value="2">Mushrooms<br>
+          <input type="radio" name="toppings" value="1">Onions
         </div>
       </div>
       <button type="submit" class="btn">Place Order!</button>
     </form>
     <div class="completedOrder">
-      <h3>Thank you, <span id="completedName"></span>!</h3>
-      <p>Pizza Your Heart pizza will be delivered to:</p>
-      <p id="completedAddress"></p>
 
-      <p class="totalCost"></p>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Thank you, <span id="completedName"></span>!</h3>
+        <p>Pizza Your Heart pizza will be delivered to:</p>
+        <p id="completedAddress"></p>
+        <h4 class="totalCost"></h4>
+        <a href="index.html"><button type="button" class="btn">New Order</button></a>
+      </div>
+      <div class="col-md-6">
+        <img src="img/pizzaheart.png" alt="Pizza Heart">
+      </div>
+    </div>
     </div>
   </body>
 </html>
