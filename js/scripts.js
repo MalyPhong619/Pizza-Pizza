@@ -26,7 +26,6 @@ Pizza.prototype.Cost = function() {
   $(".totalCost").text("Your total cost: " + "$" + this.startPrice);
 }
 
-
 // User Interface Logic
 $(document).ready(function() {
   $(".orderForm").submit(function(event) {
@@ -48,8 +47,12 @@ $(document).ready(function() {
 
     var pizzaSize = parseInt($("input:radio[name=pizzaSize]:checked").val());
     var pizzaProtein = parseInt($("input:radio[name=protein]:checked").val());
-    var pizzaToppings = parseInt($("input:radio[name=toppings]:checked").val());
+    var pizzaToppings = [];
 
+    $("input:checkbox[name=toppings]:checked").map(function(){
+      pizzaToppings.push($(this).val());
+    })
+      console.log(pizzaToppings);
     var pizza = new Pizza(pizzaSize, pizzaProtein, pizzaToppings);
 
     pizza.Cost();

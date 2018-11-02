@@ -1,63 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline|Bungee+Inline" rel="stylesheet">
-    <script src="js/jquery-3.3.1.js"></script>
-    <script src="js/scripts.js"></script>
-    <meta charset="utf-8">
-    <title>Pizza My Heart</title>
-  </head>
-  <body>
-    <h1>Pizza My Heart <span id="pizzaShop">pizza shop</span></h1>
-    <div class="row userInformation">
-      <div class=col-md-6>
-        <form class="orderForm">
-          <h3>Name:</h3>
-          <input class="ordererInput" type="text" id="formName" placeholder="Name">
-          <h3>Address:</h3>
-          <input class="ordererInput" type="text" id="formStreet" placeholder="Street Address">
-          <br>
-          <input class="ordererInput" type="text" id="formCity" placeholder="City">
-          <input class="ordererInput" type="text" id="formState" placeholder="State"><br>
-          <button type="submit" class="btn">Continue</button>
-        </form>
+<head>
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline|Bungee+Inline" rel="stylesheet">
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/scripts.js"></script>
+  <meta charset="utf-8">
+  <title>Pizza My Heart</title>
+</head>
+<body>
+  <h1>Pizza My Heart <span id="pizzaShop">pizza shop</span></h1>
+  <div class="row userInformation">
+    <div class="col-md-6">
+      <img src="img/pizzaheart.png" alt="Pizza Heart">
+    </div>
+    <div class=col-md-6>
+      <form class="orderForm">
+        <h3>Name:</h3>
+        <input class="ordererInput" type="text" id="formName" placeholder="Name">
+        <h3>Address:</h3>
+        <input class="ordererInput" type="text" id="formStreet" placeholder="Street Address">
+        <br>
+        <input class="ordererInput" type="text" id="formCity" placeholder="City">
+        <input class="ordererInput" type="text" id="formState" placeholder="State"><br>
+        <button type="submit" class="btn">Continue</button>
+      </form>
+    </div>
+  </div>
+  <form class="pizzaOrderForm">
+    <div class="row">
+      <div class="col-md-4 pizzaSize">
+        <h3>Select Size:</h3>
+        <input type="radio" name="pizzaSize" value="8">Small<br>
+        <input type="radio" name="pizzaSize" value="12">Medium<br>
+        <input type="radio" name="pizzaSize" value="15">Large<br>
+        <input type="radio" name="pizzaSize" value="18">Family Size
       </div>
+      <div class="col-md-4 pizzaProtein">
+        <h3>Select 1 Protein:</h3>
+        <input type="radio" name="protein" value="1">Chicken<br>
+        <input type="radio" name="protein" value="1">Sausage<br>
+        <input type="radio" name="protein" value="1">Pepperoni<br>
+        <input type="radio" name="protein" value="1">Ham
+      </div>
+      <div class="col-md-4 pizzaToppings">
+        <h3>Select A Topping:</h3>
+        <input type="checkbox" name="toppings" value="Pineapple">Pineapple<br>
+        <input type="checkbox" name="toppings" value="Spinach">Spinach<br>
+        <input type="checkbox" name="toppings" value="Olives">Olives<br>
+        <input type="checkbox" name="toppings" value="Mushrooms">Mushrooms<br>
+        <input type="checkbox" name="toppings" value="">Onions
+      </div>
+    </div>
+    <button type="submit" class="btn">Place Order!</button>
+  </form>
+  <div class="completedOrder">
+    <div class="row">
       <div class="col-md-6">
         <img src="img/pizzaheart.png" alt="Pizza Heart">
       </div>
-    </div>
-    <form class="pizzaOrderForm">
-      <div class="row">
-        <div class="col-md-4 pizzaSize">
-          <h3>Select Size:</h3>
-          <input type="radio" name="pizzaSize" value="8">Small<br>
-          <input type="radio" name="pizzaSize" value="12">Medium<br>
-          <input type="radio" name="pizzaSize" value="15">Large<br>
-          <input type="radio" name="pizzaSize" value="18">Family Size
-        </div>
-        <div class="col-md-4 pizzaProtein">
-          <h3>Select 1 Protein:</h3>
-          <input type="radio" name="protein" value="1">Chicken<br>
-          <input type="radio" name="protein" value="1">Sausage<br>
-          <input type="radio" name="protein" value="1">Pepperoni<br>
-          <input type="radio" name="protein" value="1">Ham
-        </div>
-        <div class="col-md-4 pizzaToppings">
-          <h3>Select A Topping:</h3>
-          <input type="radio" name="toppings" value="2">Pineapple<br>
-          <input type="radio" name="toppings" value="1">Spinach<br>
-          <input type="radio" name="toppings" value="1">Olives<br>
-          <input type="radio" name="toppings" value="2">Mushrooms<br>
-          <input type="radio" name="toppings" value="1">Onions
-        </div>
-      </div>
-      <button type="submit" class="btn">Place Order!</button>
-    </form>
-    <div class="completedOrder">
-
-    <div class="row">
       <div class="col-md-6">
         <h3>Thank you, <span id="completedName"></span>!</h3>
         <p>Pizza Your Heart pizza will be delivered to:</p>
@@ -65,10 +67,8 @@
         <h4 class="totalCost"></h4>
         <a href="index.html"><button type="button" class="btn">New Order</button></a>
       </div>
-      <div class="col-md-6">
-        <img src="img/pizzaheart.png" alt="Pizza Heart">
-      </div>
+
     </div>
-    </div>
-  </body>
+  </div>
+</body>
 </html>
