@@ -38,14 +38,14 @@
         <input type="radio" name="pizzaSize" value="18">Family Size
       </div>
       <div class="col-md-4 pizzaProtein">
-        <h3>Select 1 Protein:</h3>
+        <h3>Select Protein(s):</h3>
         <input type="checkbox" name="protein" value="Chicken">Chicken<br>
         <input type="checkbox" name="protein" value="Sausage">Sausage<br>
         <input type="checkbox" name="protein" value="Pepperoni">Pepperoni<br>
         <input type="checkbox" name="protein" value="Ham">Ham
       </div>
       <div class="col-md-4 pizzaToppings">
-        <h3>Select A Topping:</h3>
+        <h3>Select Topping(s):</h3>
         <input type="checkbox" name="toppings" value="Pineapple">Pineapple<br>
         <input type="checkbox" name="toppings" value="Spinach">Spinach<br>
         <input type="checkbox" name="toppings" value="Olives">Olives<br>
@@ -66,18 +66,19 @@
         <p id="completedAddress"></p>
         <div class="row">
           <div class="col-sm-4">
-        <ul id="toppingsList">
-        </ul>
-        </div>
-        <div class="col-sm-4">
-        <ul id="proteinList">
-        </ul>
-        </div>
+            <h5>Protein:</h5>
+            <ul id="proteinList">
+            </ul>
+          </div>
+          <div class="col-sm-4">
+            <h5>Toppings</h5>
+            <ul id="toppingsList">
+            </ul>
+          </div>
         </div>
         <h4 class="totalCost"></h4>
         <a href="index.html"><button type="button" class="btn">New Order</button></a>
       </div>
-
     </div>
   </div>
 </body>
