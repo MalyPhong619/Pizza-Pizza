@@ -30,10 +30,9 @@ function Pizza(size, protein, topping) {
   this.topping = topping,
   this.startPrice = 5,
   this.toppingPrice = 0,
-  this.proteinPrice = 0
+  this.proteinPrice = 2
 }
 
-// each topping is $1 = topping.length
 Pizza.prototype.toppingsPrice = function() {
   this.toppingPrice += this.topping.length;
   this.proteinPrice += this.protein.length;
