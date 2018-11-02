@@ -9,6 +9,16 @@ function Information(name, street, city, state) {
   this.state = state
 }
 
+Information.prototype.inputInfo = function() {
+  if(this.name && this.street && this.city && this.state) {
+    $(".pizzaOrderForm").show();
+    $(".userInformation").hide();
+  } else {
+    $(".pizzaHeart").hide();
+    $(".alertDiv").show();
+  }
+}
+
 Information.prototype.delivery = function() {
   $("#completedName").text(this.name);
   $("#completedAddress").append(this.street + "<br>" + this.city + ", " + this.state);
@@ -29,8 +39,11 @@ Pizza.prototype.toppingsPrice = function() {
   this.proteinPrice += this.protein.length;
 }
 
-Pizza.prototype.Cost = function() {
+Pizza.prototype.cost = function() {
   this.startPrice += add(this.size, this.proteinPrice, this.toppingPrice);
+}
+
+Pizza.prototype.outputPizzaInfo = function() {
   $(".totalCost").text("Your total cost: " + "$" + this.startPrice);
   this.topping.forEach(function(topping) {
     $("#toppingsList").append("<li>" + topping + "</li>");
@@ -52,9 +65,8 @@ $(document).ready(function() {
 
     var information = new Information(userName, userStreet, userCity, userState);
 
+    information.inputInfo();
     information.delivery();
-    $(".pizzaOrderForm").show();
-    $(".userInformation").hide();
   });
   $(".pizzaOrderForm").submit(function(event) {
     event.preventDefault();
@@ -73,7 +85,8 @@ $(document).ready(function() {
     var pizza = new Pizza(pizzaSize, pizzaProtein, pizzaToppings);
 
     pizza.toppingsPrice();
-    pizza.Cost();
+    pizza.cost();
+    pizza.outputPizzaInfo();
     $(".pizzaOrderForm").hide();
     $(".completedOrder").show();
   });

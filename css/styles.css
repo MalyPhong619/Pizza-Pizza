@@ -4,7 +4,7 @@ body {
   color: black;
   font-weight: bold;
 }
-.pizzaOrderForm, .completedOrder {
+.pizzaOrderForm, .completedOrder, .alertDiv {
   display: none;
 }
 h1 {
@@ -27,6 +27,10 @@ img {
   border: solid .5px black;
   width: 250px;
   margin-bottom: 3px;
+}
+.alertDiv {
+  text-align: center;
+  color: red,
 }
 #pizzaShop {
   font-size: 30px;
