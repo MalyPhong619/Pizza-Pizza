@@ -18,13 +18,20 @@ function Pizza(size, protein, topping) {
   this.size = size,
   this.protein = protein,
   this.topping = topping,
-  this.startPrice = 5
+  this.startPrice = 5,
+  this.toppingPrice = 0
+}
+
+Pizza.prototype.toppings = function() {
+  return this.toppingPrice += this.topping.length;
 }
 
 Pizza.prototype.Cost = function() {
-  this.startPrice += Add(this.size, this.protein, this.topping);
+  this.startPrice += Add(this.size, this.protein, this.toppingPrice);
   $(".totalCost").text("Your total cost: " + "$" + this.startPrice);
 }
+
+
 
 // User Interface Logic
 $(document).ready(function() {
@@ -55,6 +62,7 @@ $(document).ready(function() {
       console.log(pizzaToppings);
     var pizza = new Pizza(pizzaSize, pizzaProtein, pizzaToppings);
 
+    pizza.toppings();
     pizza.Cost();
     $(".pizzaOrderForm").hide();
     $(".completedOrder").show();
