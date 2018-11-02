@@ -12,7 +12,7 @@
   <body>
     <h1>Pizza My Heart <span id="pizzaShop">pizza shop</span></h1>
     <div>
-      <form class="OrderForm">
+      <form class="orderForm">
         <h3>Name:</h3>
         <input class="ordererInput" type="text" id="formName">
         <h3>Address:</h3>
@@ -48,10 +48,14 @@
           <input type="checkbox" name="toppings" value="1">Onions
         </div>
       </div>
-      <button type="submit" class="btn">Order!</button>
+      <button type="submit" class="btn">Place Order!</button>
     </form>
     <div class="completedOrder">
+      <h3>Thank you, <span id="completedName"></span>!</h3>
+      <p>Pizza Your Heart pizza will be delivered to:</p>
+      <p id="completedAddress"></p>
 
+      <p class="totalCost"></p>
     </div>
   </body>
 </html>
