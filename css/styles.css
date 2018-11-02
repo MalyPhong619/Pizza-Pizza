@@ -10,6 +10,11 @@ h1 {
 h1, h3{
   font-family: 'Bungee Inline', cursive;
 }
+.btn {
+  color: black;
+  font-weight: bold;
+  border: solid .5px black;
+}
 .ordererInput {
   border-radius: 3px;
   border: solid .5px black;
