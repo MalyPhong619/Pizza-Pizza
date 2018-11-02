@@ -1,4 +1,4 @@
-function Add(a, b, c) {
+function add(a, b, c) {
   return a + b + c;
 }
 
@@ -19,23 +19,26 @@ function Pizza(size, protein, topping) {
   this.protein = protein,
   this.topping = topping,
   this.startPrice = 5,
-  this.toppingPrice = 0
+  this.toppingPrice = 0,
+  this.proteinPrice = 0
 }
 
 // each topping is $1 = topping.length
 Pizza.prototype.toppingsPrice = function() {
-  return this.toppingPrice += this.topping.length;
+  this.toppingPrice += this.topping.length;
+  this.proteinPrice += this.protein.length;
 }
 
 Pizza.prototype.Cost = function() {
-  this.startPrice += Add(this.size, this.protein, this.toppingPrice);
+  this.startPrice += add(this.size, this.proteinPrice, this.toppingPrice);
   $(".totalCost").text("Your total cost: " + "$" + this.startPrice);
   this.topping.forEach(function(topping) {
-    $("ul").append("<li>" + topping + "</li>");
+    $("#toppingsList").append("<li>" + topping + "</li>");
+  })
+  this.protein.forEach(function(protein) {
+    $("#proteinList").append("<li>" + protein + "</li>");
   })
 }
-
-
 
 // User Interface Logic
 $(document).ready(function() {
@@ -57,9 +60,12 @@ $(document).ready(function() {
     event.preventDefault();
 
     var pizzaSize = parseInt($("input:radio[name=pizzaSize]:checked").val());
-    var pizzaProtein = parseInt($("input:radio[name=protein]:checked").val());
+    var pizzaProtein = []; parseInt($("input:radio[name=protein]:checked").val());
     var pizzaToppings = [];
 
+    $("input:checkbox[name=protein]:checked").map(function(){
+      pizzaProtein.push($(this).val());
+    })
     $("input:checkbox[name=toppings]:checked").map(function(){
       pizzaToppings.push($(this).val());
     })

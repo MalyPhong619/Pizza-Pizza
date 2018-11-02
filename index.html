@@ -39,10 +39,10 @@
       </div>
       <div class="col-md-4 pizzaProtein">
         <h3>Select 1 Protein:</h3>
-        <input type="radio" name="protein" value="1">Chicken<br>
-        <input type="radio" name="protein" value="1">Sausage<br>
-        <input type="radio" name="protein" value="1">Pepperoni<br>
-        <input type="radio" name="protein" value="1">Ham
+        <input type="checkbox" name="protein" value="Chicken">Chicken<br>
+        <input type="checkbox" name="protein" value="Sausage">Sausage<br>
+        <input type="checkbox" name="protein" value="Pepperoni">Pepperoni<br>
+        <input type="checkbox" name="protein" value="Ham">Ham
       </div>
       <div class="col-md-4 pizzaToppings">
         <h3>Select A Topping:</h3>
@@ -64,9 +64,16 @@
         <h3>Thank you, <span id="completedName"></span>!</h3>
         <p>Pizza Your Heart pizza will be delivered to:</p>
         <p id="completedAddress"></p>
-        <ul>
-
+        <div class="row">
+          <div class="col-sm-4">
+        <ul id="toppingsList">
         </ul>
+        </div>
+        <div class="col-sm-4">
+        <ul id="proteinList">
+        </ul>
+        </div>
+        </div>
         <h4 class="totalCost"></h4>
         <a href="index.html"><button type="button" class="btn">New Order</button></a>
       </div>
