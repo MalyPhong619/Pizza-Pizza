@@ -1,9 +1,14 @@
 body {
   padding: 25px 50px 25px 50px;
+  font-family: 'Bungee Hairline', cursive;
+  color: black;
+  font-weight: bold;
 }
 h1 {
-  font-family: 'Bungee Inline', cursive;
   font-size: 80px;
+}
+h1, h3{
+  font-family: 'Bungee Inline', cursive;
 }
 .ordererInput {
   border-radius: 3px;
@@ -12,6 +17,5 @@ h1 {
   margin-bottom: 3px;
 }
 #pizzaShop {
-  font-family: 'Bungee Hairline', cursive;
   font-size: 30px;
 }
