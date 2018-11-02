@@ -1,14 +1,23 @@
+function Pizza(size, protein, topping) {
+  this.size = pizza,
+  this.protein = protein,
+  this.topping = topping,
+  this.startPrice = 5
+}
+
+
+
+// User Interface Logic
 $(document).ready(function() {
   $(".pizzaOrderForm").submit(function(event) {
     event.preventDefault();
 
     var pizzaSize = parseInt($("input:radio[name=pizzaSize]:checked").val());
-    console.log(pizzaSize);
     var pizzaProtein = parseInt($("input:radio[name=protein]:checked").val());
-    console.log(pizzaProtein);
     var pizzaToppings = parseInt($("input:checkbox[name=toppings]:checked").val());
-    console.log(pizzaToppings);
+
+
+
 
   });
-
 });
