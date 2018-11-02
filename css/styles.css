@@ -2,6 +2,12 @@ h1 {
   font-family: 'Bungee Inline', cursive;
   font-size: 80px;
 }
+.ordererInput {
+  border-radius: 6px;
+  border: solid 1px black;
+  width: 300px;
+
+}
 #pizzaShop {
   font-family: 'Bungee Hairline', cursive;
   font-size: 30px;

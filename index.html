@@ -13,15 +13,28 @@
     <h1>Pizza My Heart <span id="pizzaShop">pizza shop</span></h1>
     <form class="OrderForm">
       <h3>Name:</h3>
-      <input type="text" id="formName">
+      <input class="ordererInput" type="text" id="formName">
       <h3>Address:</h3>
-      <input type="text" id="formStreet" placeholder="Street Address">
+      <input class="ordererInput" type="text" id="formStreet" placeholder="Street Address">
       <br>
-      <input type="text" id="formCity" placeholder="City">
-      <input type="text" id="formState" placeholder="State">
-
+      <input class="ordererInput" type="text" id="formCity" placeholder="City">
+      <input class="ordererInput" type="text" id="formState" placeholder="State">
     </form>
+    <form class="pizzaOrderForm">
+      <div class="row">
+        <div class="col-md-4 pizzaSize">
+          <input type="radio" name="pizzaSize" value="8">Small
+          <input type="radio" name="pizzaSize" value="12">Medium
+          <input type="radio" name="pizzaSize" value="15">Large
+          <input type="radio" name="pizzaSize" value="18">Family Size
+        </div>
+        <div class="col-md-4 pizzaProtein">
 
+        </div>
+        <div class="col-md-4 pizzaToppings">
 
+        </div>
+      </div>
+    </form>
   </body>
 </html>
