@@ -21,7 +21,7 @@ Information.prototype.inputInfo = function() {
 
 Information.prototype.delivery = function() {
   $("#completedName").text(this.name);
-  $("#completedAddress").append(this.street + "<br>" + this.city + ", " + this.state);
+  $("#completedAddress").html(this.street + "<br>" + this.city + ", " + this.state);
 }
 
 function Pizza(size, protein, topping) {
@@ -71,7 +71,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     var pizzaSize = parseInt($("input:radio[name=pizzaSize]:checked").val());
-    var pizzaProtein = []; 
+    var pizzaProtein = [];
     var pizzaToppings = [];
 
     $("input:checkbox[name=protein]:checked").map(function(){
